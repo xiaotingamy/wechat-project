@@ -1,0 +1,47 @@
+.box-wrp{
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+}
+.box-item {
+    -webkit-box-flex:1;
+}
+.logo-container{
+    height: 280rpx;
+}
+.logo {
+    width: 180rpx;
+    height: 250rpx;
+    display: block;
+}
+.form-container {
+    border-top: 1rpx solid #ddd;
+}
+.input-box {
+    padding: 0 34rpx;
+    height: 120rpx;
+    border-bottom: 1rpx solid #ddd;
+}
+.icn {
+    width: 32rpx;
+    height: 32rpx;
+    margin-right: 25rpx;
+    display: block;
+}
+.ipt {
+    font-size: 32rpx;
+}
+.yzm-img {
+    width: 280rpx;
+    height: 80rpx;
+}
+.forget {
+    padding-right: 34rpx;
+    text-align: right;
+    font-size: 28rpx;
+    line-height: 66rpx;
+    color: #cbcbcb;
+}
+.ui-whitespace {
+    padding: 0 34rpx;
+}

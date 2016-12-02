@@ -1,0 +1,46 @@
+/**index.wxss**/
+.login-row {
+  padding: 0 34rpx;
+  height: 110rpx;
+  background-color: #fff;
+}
+.title {
+  float:left;
+  font-size: 32rpx;
+  line-height: 110rpx;
+}
+.btns{
+  float:right;
+  padding-top: 26rpx;
+}
+.l-btn {
+  display: inline-block;
+  width: 100rpx;
+  height: 55rpx;
+  font-size: 24rpx;
+  color: #fff;
+  background-color: #da3412;
+  padding-right: 0;
+  padding-left: 0;
+  line-height: 57rpx;
+}
+.r-btn {
+  display: inline-block;
+  margin-left: 10rpx;
+  width: 100rpx;
+  height: 55rpx;
+  font-size: 24rpx;
+  color: #da3412;
+  background-color: transparent;
+  border-color: #da3412; 
+  padding-right: 0;
+  padding-left: 0;
+  line-height: 57rpx;
+}
+.swiper {
+  height: 240rpx;
+}
+.slide-image {
+  width:100%;
+  height: 240rpx;
+}

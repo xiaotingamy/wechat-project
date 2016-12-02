@@ -1,0 +1,24 @@
+<view class="box-wrp logo-container">
+  <image class="logo" src="../../images/jy-bank-logo.png" />
+</view>
+<view class="form-container">
+  <view class="box-wrp input-box">
+    <image class="icn" src="../../images/username.png" />
+    <input class="box-item ipt" type="number" placeholder="请输入手机号码" maxlength="11"/>
+  </view>
+  <view class="box-wrp input-box">
+    <image class="icn" src="../../images/password.png" />
+    <input class="box-item ipt" password type="text" placeholder="请输入密码" maxlength="20"/>
+  </view>
+  <view class="box-wrp input-box">
+    <image class="icn" src="../../images/vali.png" />
+    <input class="box-item ipt" type="number" placeholder="请输入验证码" maxlength="4"/>
+    <image class="yzm-img" src="../../images/yzm.png"/>
+  </view>
+  <navigator class="forget" url="/reset">
+    忘记密码?
+  </navigator>
+  <view class="ui-whitespace">
+    <button type="primary">登录</button>
+  </view>
+</view>

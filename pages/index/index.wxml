@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class="login-row">
+    <text class="title">注册豪礼等你来！</text>
+    <view class="btns">
+      <button class="l-btn" bindtap="toLogin">登录</button>
+      <button class="r-btn" bindtap="toReg">注册</button>
+    </view>
+</view>
+<swiper class="swiper" indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
