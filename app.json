@@ -12,13 +12,13 @@
     "navigationBarBackgroundColor": "#da3412",
     "navigationBarTitleText": "嘉远微银",
     "navigationBarTextStyle":"white",
-    "backgroundColor": "#f5f5f5"
+    "backgroundColor": "#e5e5e5"
   },
   "tabBar":{
     "color": "#6d6d6d",
     "selectedColor": "#da3412",
     "backgroundColor": "#ffffff",
-    "borderStyle": "white",
+    "borderStyle": "black",
     "list": [
         {
           "pagePath": "pages/index/index",

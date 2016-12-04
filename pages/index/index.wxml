@@ -14,3 +14,23 @@
     </swiper-item>
   </block>
 </swiper>
+<view class="recommend-head">
+  <text class="recommend-title">理财推荐</text>
+  <navigator url="/pages/product/list/list" class="recommend-more">
+    <text class="more">更多</text>
+    <image class="item-arrow" src="../../images/arrowright.png"/>
+  </navigator>
+</view>
+<view class="recommend-list">
+  <navigator url="url" class="recommend-item">
+    <text class="item-title">新人专享18期</text>
+    <view class="item-content">
+      <text class="rate">14.88%</text>
+      <view class="limit">
+        <text>期限：7天</text>
+        <text>起投：100元</text>
+      </view>
+      <button class="buy-btn">立即购买</button>
+    </view>
+  </navigator>
+</view>

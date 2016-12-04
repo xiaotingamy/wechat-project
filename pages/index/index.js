@@ -7,6 +7,7 @@ Page({
       '../../images/a2.jpg',
       '../../images/a3.jpg'
     ],
+    arrowrightImgUrl: '../../images/arrowright.png',
     indicatorDots: false,
     autoplay: true,
     interval: 5000,
