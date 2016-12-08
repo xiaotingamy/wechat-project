@@ -12,7 +12,7 @@
     "navigationBarBackgroundColor": "#da3412",
     "navigationBarTitleText": "嘉远微银",
     "navigationBarTextStyle":"white",
-    "backgroundColor": "#e5e5e5"
+    "backgroundColor": "#333"
   },
   "tabBar":{
     "color": "#6d6d6d",
