@@ -1,26 +1,13 @@
-<view class="pro-list">
+<view wx:for="{{products}}" wx:for-item="product" class="pro-list">
   <navigator url="url" class="pro-item">
-    <text class="item-title">新人专享18期</text>
+    <text class="item-title">{{product.name}}</text>
     <view class="item-content">
-      <text class="rate">14.88%</text>
+      <text class="rate">{{product.yearIncome}}%</text>
       <view class="limit">
-        <text>期限：7天</text>
-        <text>起投：100元</text>
+        <text>期限：{{product.financePeriod}}天</text>
+        <text>起投：{{product.lowestAmount}}元</text>
       </view>
-      <canvas style="width: 40px; height: 40px;" canvas-id="firstCanvas">{{schedule}}</canvas>
-    </view>
-  </navigator>
-</view>
-<view class="pro-list">
-  <navigator url="url" class="pro-item">
-    <text class="item-title">新人专享18期</text>
-    <view class="item-content">
-      <text class="rate">14.88%</text>
-      <view class="limit">
-        <text>期限：7天</text>
-        <text>起投：100元</text>
-      </view>
-      <canvas style="width: 40px; height: 40px;" canvas-id="firstCanvas"></canvas>
+      <canvas style="width: 50px; height: 50px;" canvas-id="{{'canvas'+product.id}}"></canvas>
     </view>
   </navigator>
 </view>

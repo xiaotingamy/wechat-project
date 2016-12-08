@@ -1,7 +1,55 @@
 Page({
     data: {
-        schedule: 50
-        
+        currentTime: 1481201423708,
+        page: 2,
+        pages:94,
+        products:[
+            {
+                id:100,
+                financePeriod:65,
+                increaseInterest:0,
+                interestDate:"2016-12-06",
+                label:"",
+                lowestAmount:200,
+                name:"新手专享72期",
+                productContract:null,
+                risk:"超低",
+                shippedTime:1480932000000,
+                totalAmount:100000,
+                actualAmount:100000,
+                yearIncome:9.6,
+            },
+            {
+                id:101,
+                financePeriod:65,
+                increaseInterest:0,
+                interestDate:"2016-12-09",
+                label:"",
+                lowestAmount:200,
+                name:"嘉家乐75期",
+                productContract:null,
+                risk:"超低",
+                shippedTime:1480932000000,
+                totalAmount:100000,
+                actualAmount:18000,
+                yearIncome:13.3,
+            },
+            {
+                id:102,
+                financePeriod:120,
+                increaseInterest:0,
+                interestDate:"2016-12-09",
+                label:"",
+                lowestAmount:200,
+                name:"嘉家乐76期",
+                productContract:null,
+                risk:"超低",
+                shippedTime:1480932000000,
+                totalAmount:100000,
+                actualAmount:8000,
+                yearIncome:16,
+            }
+        ]
     },
      onLoad: function(options) {
         // Do some initialize when page load.
@@ -11,50 +59,53 @@ Page({
         console.error(e.detail.errMsg)
     },
     onReady: function (e) {
+        var context = wx.createContext();
+        var products = this.data.products;
+       products.forEach(function(obj){
+           var rate = (obj.actualAmount/obj.totalAmount).toFixed(6);
+           var percent = rate * 100;
+           console.log(percent);
+           var showPercent = new Number(percent).toFixed();
+           if (percent > 0 && percent < 1){
+               showPercent = 1;
+           } else if (percent > 99 && percent < 100) {
+               showPercent = 99
+           } else if (percent >=100){
+               showPercent = 100;
+           }
+            context.clearActions();
+            context.beginPath();
+            context.arc(25,25,20,0,Math.PI*2,true);
+            context.setStrokeStyle("#dddddd");
+            context.setLineWidth(2);
+            context.stroke();
+            context.closePath();
+            if(percent < 100 && percent > 0) {
+                context.beginPath();
+                context.arc(25,25,20,0, Math.PI * 2 * rate, false);
+                context.setStrokeStyle("#da3417");
+                context.setLineWidth(2);
+                context.stroke();
+                context.closePath();
+                context.moveTo(25,25);
+                context.setFillStyle('#da3417');
+                if(percent >= 10){
+                    context.fillText(showPercent + '%',12,30)
+                } else {
+                    context.fillText(showPercent + '%',16,30)
+                }
+            } else {
+                context.moveTo(25,25);
+                context.setFillStyle('#dddddd');
+                context.fillText('售罄',12,30);
+            }
 
-        // 使用 wx.createContext 获取绘图上下文 context
-        var context = wx.createContext()
-
-        // context.setStrokeStyle("#00ff00")
-        // context.setLineWidth(5)
-        // context.rect(0, 0, 200, 200)
-        // context.stroke()
-        // context.setStrokeStyle("#ff0000")
-        // context.setLineWidth(2)
-        // context.moveTo(160, 100)
-        // context.arc(100, 100, 60, 0, 2 * Math.PI, true)
-        // context.moveTo(140, 100)
-        // context.arc(100, 100, 40, 0, Math.PI, false)
-        // context.moveTo(85, 80)
-        // context.arc(80, 80, 5, 0, 2 * Math.PI, true)
-        // context.moveTo(125, 80)
-        // context.arc(120, 80, 5, 0, 2 * Math.PI, true)
-        // context.stroke()
-        var canvas_w = 100;
-        var canvas_h = 100;
-        var line_w = 4;
-        context.beginPath();
-        context.arc(canvas_w / 2, canvas_h / 2, canvas_w / 2 - line_w, 0, Math.PI * 2,false);
-        context.lineWidth = line_w;
-        context.strokeStyle = '#d8d7d7';
-        context.stroke();
-        context.closePath();
-        context.beginPath();
-        context.arc(canvas_w / 2, canvas_h / 2, canvas_w / 2 - line_w, -Math.PI * 0.5, Math.PI * 2 * this.data.schedule / 100 - Math.PI * 0.5, false);
-        context.strokeStyle = '#ee5b4c';
-        context.stroke();
-        context.closePath();
-        context.font = 'bold 32px Arial';  
-        context.fillStyle = '#e74c3c';
-        context.textAlign = 'center';  
-        context.textBaseline = 'middle';  
-        context.moveTo(canvas_w / 2, canvas_h / 2);  
-        // context.fillText(text, canvas_w / 2, canvas_h / 2);
-
-        // 调用 wx.drawCanvas，通过 canvasId 指定在哪张画布上绘制，通过 actions 指定绘制行为
-        wx.drawCanvas({
-            canvasId: 'firstCanvas',
-            actions: context.getActions() // 获取绘图动作数组
+            // 调用 wx.drawCanvas，通过 canvasId 指定在哪张画布上绘制，通过 actions 指定绘制行为
+            wx.drawCanvas({
+                canvasId: 'canvas' + obj.id,
+                actions: context.getActions() // 获取绘图动作数组
+            })
         })
+        
     }
 })
